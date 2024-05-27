@@ -1,0 +1,17 @@
+{
+  "name": "first-lambda-typescript",
+  "version": "1.0.0",
+  "description": "lambda function using typescript",
+  "main": "index.ts",
+  "scripts": {
+    "prebuild": "del /q dist",
+    "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "postbuild": "cd dist && 7z a -tzip index.zip index.js*"
+  },
+  "author": "charlyluna",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.138",
+    "esbuild": "^0.21.4"
+  }
+}
